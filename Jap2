@@ -1,0 +1,40 @@
+# Part 2: Simple Calculator Program
+# My name:
+# Who I collaborated with:
+
+# Functions for Addition and Subtraction
+def add(x, y):
+    """Adds two numbers."""
+    return x + y
+
+def subtract(x, y):
+    """Subtracts two numbers."""
+    return x - y
+
+# Main program loop
+print("--- Simple Calculator ---")
+print("Choose an operation:")
+print("1. Add")
+print("2. Subtract")
+
+while True:
+    choice = input("Enter choice (1/2): ")
+
+    if choice in ('1', '2'):
+        try:
+            # Use float() to allow for non-integer numbers
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            continue
+
+        if choice == '1':
+            print(f"{num1} + {num2} = {add(num1, num2)}")
+        elif choice == '2':
+            print(f"{num1} - {num2} = {subtract(num1, num2)}")
+        
+        # Stop the calculator after a result is displayed
+        break
+    else:
+        print("Invalid choice. Please enter 1 or 2.")
